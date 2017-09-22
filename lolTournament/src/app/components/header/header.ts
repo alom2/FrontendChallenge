@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.scss']
 })
 export class Header {
-
   title:string = 'League of Tournament';
 
 }
