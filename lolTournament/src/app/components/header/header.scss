@@ -1,11 +1,11 @@
-@import '../../../sass/fonts';
 @import '../../../sass/variables';
 
 .main-header {
-  font-family: 'frizquadrata_btbold';
+  font-family: $font-default;
   color: $main-color;
   text-align: center;
   background: #121212;
+  position: relative;
   border-bottom: 2px solid #262626;
 }
 .title {
@@ -22,4 +22,10 @@
     background: $main-color;
     bottom: -2px;
   }
+}
+main-button {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%)
 }
