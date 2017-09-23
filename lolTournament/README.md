@@ -4,5 +4,9 @@ This is a Tournament Management System.
 
 ## How to run
 
-On the paste `lolTournament` run `npm i` and `ng serve`.
+Run `npm i` and `ng serve`.
+
+## Technologies
+
+- Angular 4
 
