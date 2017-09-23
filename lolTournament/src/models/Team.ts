@@ -10,4 +10,8 @@ export class Team {
     this.isActive = isActive || true;
   }
 
+  setName(name) {
+    this.name = name;
+  }
+
 }

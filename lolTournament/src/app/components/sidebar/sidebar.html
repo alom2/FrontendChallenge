@@ -1,8 +1,10 @@
 <aside class="sidebar" [ngClass]="{'open': AppState.sidebarIsOpen}">
-  <div *ngIf="!tournament else tournamentEdit" class="start-button-area">
+  <div *ngIf="!tournament else tournamentEdit" (click)="createTournament()" class="start-button-area">
     <main-button text="Start new Tournament" size="small"></main-button>
   </div>
   <ng-template #tournamentEdit>
-    homem macaco
+    <div class="input-areas">
+      
+    </div>
   </ng-template>
 </aside>
