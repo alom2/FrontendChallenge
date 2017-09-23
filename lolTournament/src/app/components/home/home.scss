@@ -2,13 +2,10 @@
 
 .home {
   height: calc(100vh - 61px);
+  text-align: center;
 }
 .main-title {
   font-family: $font-default;
-}
-.tournament-view {
-  text-align: center;
-  height: 100%;
 }
 .main-title {
   position: relative;
