@@ -1,0 +1,7 @@
+@import '../../../sass/variables';
+
+:host.lol-tournament {
+  margin: 0;
+  background: url(/assets/img/main-background.jpg) center no-repeat $main-background-color;
+  background-size: auto;
+}

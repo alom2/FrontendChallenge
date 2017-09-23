@@ -16,12 +16,23 @@ export class Team {
     this.setPlayers(players);
   }
 
+  /**
+   * Set an Array of Players
+   * 
+   * @param players 
+   */
   setPlayers(players: Array<Player>) {
     this.players = players.map(
       player => new Player(player.id, player.name)
     );
   }
 
+  /**
+   * Changes the name of a specific Player
+   * 
+   * @param id 
+   * @param name 
+   */
   changePlayer(id:number, name:string) {
     this.players = this.players.map((player) => {
       if (player.id === id) {
