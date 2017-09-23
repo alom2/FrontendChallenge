@@ -9,13 +9,12 @@ import { Tournament } from '../../../models/Tournament';
   styleUrls: ['./home.scss']
 })
 export class Home implements OnInit {
-  tournament:Tournament;
+  tournamentStore:Tournament = getProperty('tournament');
+  tournament:Tournament|null = null;
 
   ngOnInit() {
-    const tournament = getProperty('tournament');
-    if (tournament) {
-      this.tournament = new Tournament(tournament);
+    if (this.tournamentStore) {
+      this.tournament = new Tournament(this.tournamentStore.steps);
     }
   }
-
 }
