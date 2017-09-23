@@ -1,0 +1,23 @@
+@import '../../../sass/variables';
+
+//local variable
+$sidebarWidth: 300px;
+
+.sidebar {
+  background: $secondary-background-color;
+  color: #fff;
+  position: fixed;
+  right: 0;
+  width: $sidebarWidth;
+  top: $header-height;
+  height: calc(100vh - 61px);
+  transform: translateX($sidebarWidth);
+  transition: transform .3s;
+  &.open {
+    transform: translateX(0);
+  }
+}
+.start-button-area {
+  padding: 20px 0;
+  border-bottom: 1px solid $main-border-color;
+}
