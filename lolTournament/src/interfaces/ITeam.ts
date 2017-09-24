@@ -1,5 +1,7 @@
 export interface ITeam {
   id: string;
   name: string;
-  isActive: boolean;
+  keyId: number;
+  stepId: number;
+  isActive?: boolean;
 }

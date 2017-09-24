@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
+
 import { AppComponent } from '../app/components/app/app.component';
 import { Header } from '../app/components/header/header';
 import { Body } from '../app/components/body/body';
@@ -17,4 +19,5 @@ export const declarations = [
 
 export const imports = [
   BrowserModule,
+  FormsModule,
 ];

@@ -1,32 +1,9 @@
-// Teams separated by key (each key can have at maximum 2 teams)
-const teams = [
-  [
-    {
-      id: 'A',
-      name: '',
-    },
-    {
-      id: 'B',
-      name: '',
-    },
-  ],
-  [
-    {
-      id: 'C',
-      name: '',
-    },
-    {
-      id: 'D',
-      name: '',
-    },
-  ]
-]
 // Winner step
 const winner = {
   id: 0,
   keys: [{
     id: 0,
-    teams: [],
+    nextKey: -1,
   }],
 };
 // Final Step
@@ -34,7 +11,7 @@ const final = {
   id: 1,
   keys: [{
     id: 1,
-    teams: [],
+    nextKey: 0,
   }],
 };
 
@@ -44,12 +21,12 @@ const semiFinal = {
   keys: [
     {
       id: 2,
-      teams: teams[0],
+      nextKey: 1,
     },
     {
       id: 3,
-      teams: teams[1],
-    }
+      nextKey: 1,
+    },
   ],
 };
 
@@ -72,4 +49,35 @@ export const steps = [
   winner,
   final,
   semiFinal,
+]
+// Teams separated by key (each key can have at maximum 2 teams)
+export const teams =[
+  {
+    id: 'A',
+    name: '',
+    stepId: 2,
+    keyId: 2,
+    isActive: true,
+  },
+  {
+    id: 'B',
+    name: '',
+    stepId: 2,
+    keyId: 2,
+    isActive: true,
+  },
+  {
+    id: 'C',
+    name: '',
+    stepId: 2,
+    keyId: 3,
+    isActive: true,
+  },
+  {
+    id: 'D',
+    name: '',
+    stepId: 2,
+    keyId: 3,
+    isActive: true,
+  },
 ]
