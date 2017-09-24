@@ -7,6 +7,7 @@ import { Body } from '../app/components/body/body';
 import { Home } from '../app/components/home/home';
 import { Button } from '../app/components/button/button';
 import { Sidebar } from '../app/components/sidebar/sidebar';
+import { Team } from '../app/components/team/team';
 
 export const declarations = [
   AppComponent,
@@ -15,6 +16,7 @@ export const declarations = [
   Button,
   Sidebar,
   Home,
+  Team,
 ];
 
 export const imports = [

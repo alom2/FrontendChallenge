@@ -34,9 +34,4 @@ export class Sidebar {
     this.tournamentChange.emit(this.tournament);
     setItem('tournament', this.tournament);
   }
-
-  setTeamName(teamId:string, event:any) {
-    this.tournament.setTeamName(teamId, event.taget.value);
-  }
-
 }
