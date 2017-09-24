@@ -1,7 +1,3 @@
-<div class="team-shield">
-  <img src="/asstes/img/team-shield.png">
-  <span>{{team.id}}</span>
-</div>
-<div>
-  {{team.name}}
+<div class="key">
+  <team *ngFor="let team of getAvailableTeams()" (click)="setKeyWinner(team.id)" [team]="team"></team>
 </div>

@@ -3,7 +3,7 @@ export class Key {
   nextKey: number;
   nextIndex: number;
 
-  constructor(id: number, nextKey: number, nextIndex) {
+  constructor(id: number, nextKey: number, nextIndex:number) {
     this.id = id;
     this.nextIndex = nextIndex;
     this.nextKey = nextKey;
