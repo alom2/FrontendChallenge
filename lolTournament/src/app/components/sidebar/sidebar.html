@@ -5,7 +5,7 @@
   <ng-template #tournamentEdit>
     <div class="team-areas" *ngFor="let team of tournament.teams">
         <div class="team-id">{{team.id}}</div>
-        <input [name]="team.id" class="team-name" [ngModel]="team.name">
+        <input [name]="team.id" class="team-name" [(ngModel)]="team.name">
     </div>
     <main-button text="Save" size="small"></main-button>
   </ng-template>

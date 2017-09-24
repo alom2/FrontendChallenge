@@ -1,4 +1,7 @@
 <section class="home">
-  <h2 *ngIf="!tournament" class="main-title"> No tournament found </h2>
   <sidebar [(tournament)]="tournament"></sidebar>
+  <h2 *ngIf="!tournament else tournamentPage" class="main-title"> No tournament found </h2>
+  <ng-template #tournamentPage>
+    <team [team]="tournament.teams[0]"></team>
+  </ng-template>
 </section>
