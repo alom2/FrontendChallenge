@@ -2,6 +2,28 @@
   <sidebar [(tournament)]="tournament"></sidebar>
   <h2 *ngIf="!tournament else tournamentPage" class="main-title"> No tournament found </h2>
   <ng-template #tournamentPage>
-    <team [team]="tournament.teams[0]"></team>
+    <div class="tournament">
+      <div *ngFor="let step of tournament.steps; let index=index" class="steps">
+        <div *ngIf="index === 0; else keys">
+          <!-- Shows the winner if its is the top step from tournament -->
+          <winner
+            *ngFor="let key of step.keys"
+            [teams]="tournament.teams"
+            [keyId]="key.id"
+            [stepId]="step.id"
+          >
+          </winner>
+        </div>
+        <ng-template #keys>
+          <key
+            *ngFor="let key of step.keys"
+            [teams]="tournament.teams"
+            [keyId]="key.id"
+            [stepId]="step.id"
+          >
+          </key>
+        </ng-template>
+      </div>
+    </div>
   </ng-template>
 </section>

@@ -1,17 +1,30 @@
 @import '../../../sass/variables';
+@import '../../../sass/mixins';
 
 .home {
-  height: calc(100vh - 61px);
+  height: calc(100vh - 61px); // header size
   text-align: center;
+  overflow: hidden;
 }
 .main-title {
   font-family: $font-default;
 }
 .main-title {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  @include verticalAlign(relative);
   color: #fff;
   font-size: 50px;
   margin: 0;
+}
+.tournament {
+  background: rgba(0, 0, 0, .6);
+  height: calc(100% - 20px); // margin size
+  width: calc(100% - 20px); // margin size
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.steps {
+  margin: 20px;
+  display: inline-block;
+  width: 100%;
 }
