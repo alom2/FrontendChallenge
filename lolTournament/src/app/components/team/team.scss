@@ -1,25 +1,42 @@
 @import '../../../sass/variables';
 
 //local variables
-$team-width: 150px;
+$team-size: 120px;
+//local placeholders
+%team-deactivated {
+  &.deactivated {
+    opacity: .6;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
+
+.team {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 20px;
+  cursor: pointer;
+}
 
 .team-shield {
-  width: $team-width;
-  height: 150px;
+  width: $team-size;
+  height: $team-size;
   font-family: $font-default;
   color: $main-color;
-  font-size: 70px;
+  font-size: 60px;
   background: url('/assets/img/team-shield.png') center no-repeat;
   background-size: cover;
+  @extend %team-deactivated;
   span {
     display: block;
     text-shadow: 0px 0px 5px rgba(186,156,94, .6);
-    padding-top: 24px;
+    padding-top: 16px;
   }
 }
 .team-name {
-  width: $team-width;
+  width: $team-size;
   color: #fff;
   font-size: 20px;
   font-family: $font-default;
+  @extend %team-deactivated;
 }

@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { getProperty } from '../../../helpers/StorageHelper';
-import { Tournament } from '../../../models/Tournament';
 import { ITeam } from '../../../interfaces/ITeam';
 
 @Component({

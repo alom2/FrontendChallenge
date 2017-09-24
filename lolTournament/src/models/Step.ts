@@ -15,7 +15,6 @@ export class Step {
    */
   setKeys(keys: Array<IKey>) {
     this.keys = keys.map((key,index) => {
-      console.log(key, index, index % 2);
       let nextIndex = index % 2;
       return new Key(key.id, key.nextKey, nextIndex);
     })

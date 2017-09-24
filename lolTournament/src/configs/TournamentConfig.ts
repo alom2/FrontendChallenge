@@ -34,7 +34,7 @@ const semiFinal = {
  * Controls the numbers of fases from tournament,
  * the number of keys and the id from each one.
  * 
- * It represents the inital structure from the tournament withou teams
+ * It represents the inital structure from the tournament without teams
  * 
  * Tournament: {
  *  steps: [{
@@ -50,6 +50,11 @@ export const steps = [
   final,
   semiFinal,
 ]
+export const teamMock = {
+  id: '',
+  name: '',
+  isActive: false,
+}
 // Teams separated by key (each key can have at maximum 2 teams)
 export const teams =[
   {
