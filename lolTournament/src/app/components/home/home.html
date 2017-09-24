@@ -8,7 +8,7 @@
           <!-- Shows the winner if its is the top step from tournament -->
           <winner
             *ngFor="let key of step.keys"
-            [teams]="tournament.teams"
+            [tournament]="tournament"
             [keyId]="key.id"
             [stepId]="step.id"
           >
@@ -17,8 +17,8 @@
         <ng-template #keys>
           <key
             *ngFor="let key of step.keys"
-            [teams]="tournament.teams"
-            [keyId]="key.id"
+            [(tournament)]="tournament"
+            [key]="key"
             [stepId]="step.id"
           >
           </key>
