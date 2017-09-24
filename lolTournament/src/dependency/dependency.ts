@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
+
 import { AppComponent } from '../app/components/app/app.component';
 import { Header } from '../app/components/header/header';
 import { Body } from '../app/components/body/body';
 import { Home } from '../app/components/home/home';
 import { Button } from '../app/components/button/button';
 import { Sidebar } from '../app/components/sidebar/sidebar';
+import { Team } from '../app/components/team/team';
 
 export const declarations = [
   AppComponent,
@@ -13,8 +16,10 @@ export const declarations = [
   Button,
   Sidebar,
   Home,
+  Team,
 ];
 
 export const imports = [
   BrowserModule,
+  FormsModule,
 ];

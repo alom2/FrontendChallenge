@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { getProperty } from '../../../helpers/StorageHelper';
+import { getProperty, setItem } from '../../../helpers/StorageHelper';
 import { Tournament } from '../../../models/Tournament';
 import { AppState } from '../../../stores/AppState';
-import { steps } from '../../../configs/TournamentConfig';
+import { steps, teams } from '../../../configs/TournamentConfig';
 
 @Component({
   selector: 'sidebar',
@@ -21,6 +21,7 @@ export class Sidebar {
   @Output() tournamentChange = new EventEmitter();
 
   AppState: { sidebarIsOpen:boolean } = AppState;
+
   /**
    * Toggles visibility of sidebar
    */
@@ -29,7 +30,8 @@ export class Sidebar {
   }
 
   createTournament() {
-    this.tournament = new Tournament(steps);
+    this.tournament = new Tournament(steps, teams);
     this.tournamentChange.emit(this.tournament);
+    setItem('tournament', this.tournament);
   }
 }

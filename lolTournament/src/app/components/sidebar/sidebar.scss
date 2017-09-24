@@ -1,17 +1,18 @@
 @import '../../../sass/variables';
 
 //local variable
-$sidebarWidth: 300px;
+$sidebar-width: 300px;
+$sidebar-text: #fff;
 
 .sidebar {
   background: $secondary-background-color;
-  color: #fff;
+  color: $sidebar-text;
   position: fixed;
   right: 0;
-  width: $sidebarWidth;
+  width: $sidebar-width;
   top: $header-height;
   height: calc(100vh - 61px);
-  transform: translateX($sidebarWidth);
+  transform: translateX($sidebar-width);
   transition: transform .3s;
   &.open {
     transform: translateX(0);
@@ -20,4 +21,32 @@ $sidebarWidth: 300px;
 .start-button-area {
   padding: 20px 0;
   border-bottom: 1px solid $main-border-color;
+}
+.team-areas {
+  padding: 10px 0;
+  border-bottom: 2px solid $main-border-color;
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+}
+.team-id {
+  font-family: $font-default;
+  font-size: 40px;
+  vertical-align: middle;
+  padding: 10px 0;
+  color: $main-color;
+  margin-right: 20px;
+  display: inline-block;
+}
+.team-name {
+  background: none;
+  outline: none;
+  color: $sidebar-text;
+  width: 140px;
+  border: {
+    bottom: 1px solid $main-color;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }

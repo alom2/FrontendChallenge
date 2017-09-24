@@ -1,0 +1,25 @@
+@import '../../../sass/variables';
+
+//local variables
+$team-width: 150px;
+
+.team-shield {
+  width: $team-width;
+  height: 150px;
+  font-family: $font-default;
+  color: $main-color;
+  font-size: 70px;
+  background: url('/assets/img/team-shield.png') center no-repeat;
+  background-size: cover;
+  span {
+    display: block;
+    text-shadow: 0px 0px 5px rgba(186,156,94, .6);
+    padding-top: 24px;
+  }
+}
+.team-name {
+  width: $team-width;
+  color: #fff;
+  font-size: 20px;
+  font-family: $font-default;
+}
