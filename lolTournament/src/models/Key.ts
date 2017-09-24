@@ -1,22 +1,11 @@
-import { Team } from './Team';
-import { ITeam } from '../interfaces/ITeam';
-
 export class Key {
   id: number;
-  teams?: Array<Team>;
+  nextKey: number;
+  nextIndex: number;
 
-  constructor(id: number, teams?: Array<ITeam>) {
+  constructor(id: number, nextKey: number, nextIndex) {
     this.id = id;
-    this.setTeams(teams);
+    this.nextIndex = nextIndex;
+    this.nextKey = nextKey;
   }
-  /**
-   * Make sure that keys will be an array of intances of Key 
-   * @param teams 
-   */
-  setTeams(teams: Array<ITeam>) {
-    if (teams.length > 0) {
-      this.teams = teams.map(team => new Team(team.id, team.name, team.isActive));
-    }
-  }
-
 }
