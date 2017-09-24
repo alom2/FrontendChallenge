@@ -1,7 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { ITeam } from '../../../interfaces/ITeam';
 import { Team } from '../../../models/Team';
+import { Tournament } from '../../../models/Tournament';
 import { teamMock } from '../../../configs/TournamentConfig';
 
 @Component({
@@ -9,28 +10,26 @@ import { teamMock } from '../../../configs/TournamentConfig';
   templateUrl: './winner.html',
   styleUrls: ['./winner.scss']
 })
-export class Winner implements OnInit {
-  @Input('teams') teams:Array<ITeam>;
+export class Winner {
+  @Input('tournament') tournament:Tournament;
   @Input('keyId') keyId:number;
   @Input('stepId') stepId:number;
-  availableTeam: ITeam;
 
-  ngOnInit() {
-    this.setAvailableTeam(this.teams);
-  }
-
-  setAvailableTeam(teams:Array<ITeam>) {
-    let availableTeam; 
-    teams.forEach(team => {
-      if(team.keyId === this.keyId && team.stepId === this.stepId) {
+  /**
+   * Get the winner team and if doesnt have team fill out with a mock
+   * @param teams 
+   */
+  getAvailableTeam() {
+    let availableTeam;
+    this.tournament.teams.forEach(team => {
+      if(team.keyId === this.keyId) {
         availableTeam = team;
       }
     })
     if (availableTeam) {
-      this.availableTeam = availableTeam;
-    } else {
-      this.availableTeam = new Team(teamMock.id, teamMock.name, this.stepId, this.keyId, teamMock.isActive);
+      return availableTeam;
     }
+    return new Team(teamMock.id, teamMock.name, this.stepId, this.keyId, teamMock.isActive);
   }
 
 }

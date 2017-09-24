@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { getProperty, setItem } from '../../../helpers/StorageHelper';
+import { setItem } from '../../../helpers/StorageHelper';
 import { Tournament } from '../../../models/Tournament';
 import { AppState } from '../../../stores/AppState';
 import { steps, teams } from '../../../configs/TournamentConfig';
