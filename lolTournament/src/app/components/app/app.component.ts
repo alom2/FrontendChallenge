@@ -11,7 +11,7 @@ import { hasStorage, createStorage } from '../../../helpers/StorageHelper';
 export class AppComponent implements OnInit {
 
   /**
-   * start local storage
+   * start local storage if doesnt exists
    */
   ngOnInit() {
     if (!hasStorage()) {

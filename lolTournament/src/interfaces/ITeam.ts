@@ -4,4 +4,5 @@ export interface ITeam {
   keyId: number;
   stepId: number;
   isActive?: boolean;
+  nextIndex?: number;
 }

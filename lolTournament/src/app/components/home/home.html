@@ -1,8 +1,12 @@
 <section class="home">
+  <div class="loading" *ngIf="AppState.isLoading" [ngClass]="{'is-loading': AppState.isLoading}">
+    <img src="/assets/img/loading.png"/>
+  </div>
   <sidebar [(tournament)]="tournament"></sidebar>
   <h2 *ngIf="!tournament else tournamentPage" class="main-title"> No tournament found </h2>
   <ng-template #tournamentPage>
     <div class="tournament">
+      <!-- Steps -->
       <div *ngFor="let step of tournament.steps; let index=index" class="steps">
         <div *ngIf="index === 0; else keys">
           <!-- Shows the winner if its is the top step from tournament -->
@@ -24,6 +28,9 @@
           </key>
         </ng-template>
       </div>
+      <!-- End Steps -->
+      <main-button (click)="unsetTournament()" text="Clear Tournament"></main-button>
+      <main-button (click)="save()" text="Save Tournament"></main-button>
     </div>
   </ng-template>
 </section>
