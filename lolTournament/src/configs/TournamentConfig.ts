@@ -4,6 +4,8 @@ const winner = {
   keys: [{
     id: 0,
     nextKey: -1,
+    nextIndex: 0,
+    lastTeamId: '',
   }],
 };
 // Final Step
@@ -12,6 +14,8 @@ const final = {
   keys: [{
     id: 1,
     nextKey: 0,
+    nextIndex: 0,
+    lastTeamId: '',
   }],
 };
 
@@ -22,10 +26,14 @@ const semiFinal = {
     {
       id: 2,
       nextKey: 1,
+      nextIndex: 0,
+      lastTeamId: '',
     },
     {
       id: 3,
       nextKey: 1,
+      nextIndex: 1,
+      lastTeamId: '',
     },
   ],
 };

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { getProperty } from '../../../helpers/StorageHelper';
+import { getProperty, setItem, remove } from '../../../helpers/StorageHelper';
 import { Tournament } from '../../../models/Tournament';
+import { AppState } from '../../../stores/AppState';
+import { IAppState } from '../../../interfaces/IAppState';
 
 @Component({
   selector: 'home',
@@ -9,9 +11,12 @@ import { Tournament } from '../../../models/Tournament';
   styleUrls: ['./home.scss']
 })
 export class Home implements OnInit {
-  tournamentStore:Tournament;
+  tournamentStore:Tournament | null;
   tournament:Tournament|null = null;
-
+  AppState:IAppState = AppState;
+  /**
+   * Creates new tournament based on localstorage
+   */
   ngOnInit() {
     this.tournamentStore = getProperty('tournament');
     if (this.tournamentStore) {
@@ -20,4 +25,26 @@ export class Home implements OnInit {
       );
     }
   }
+  /**
+   * Saves tournament on localstorage
+   */
+  save() {
+    this.AppState.isLoading = true;
+    setTimeout(() => {
+      setItem('tournament', this.tournament);
+      this.AppState.isLoading = false;
+    },1500);
+  }
+  /**
+   * Removes tournament on localstorage
+   */
+  unsetTournament() {
+    this.AppState.isLoading = true;
+    setTimeout(() => {
+      this.tournament = null;
+      remove('tournament');
+      this.AppState.isLoading = false;
+    },1500);
+  }
+
 }
