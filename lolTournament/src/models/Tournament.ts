@@ -29,7 +29,7 @@ export class Tournament {
   }
 
   /**
-   * Travels for all steps and keys changing the name of the team
+   * Find a team with the same id from teamId and set the new name
    * @param teamId 
    * @param teamName 
    */

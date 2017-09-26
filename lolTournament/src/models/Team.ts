@@ -5,7 +5,6 @@ export class Team {
   isActive: boolean;
   stepId: number;
   keyId: number;
-  nextIndex?: number;
 
   constructor(id: string, name: string, stepId: number, keyId: number, isActive:boolean = true) {
     this.id = id;

@@ -61,7 +61,6 @@ export class TeamManager {
     const teams = []
     this.tournament.teams.forEach(team => {
       if (team.keyId === this.key.id) {
-        team.nextIndex = this.key.nextIndex;
         teams.push(team);
       }
     }); 
@@ -69,5 +68,18 @@ export class TeamManager {
       this.fillAvailablesTeams(teams);
     }
     return sortTeams(teams, this.tournament.teams);
+  }
+  /**
+   * Sets the winner and the loser to current key
+   * @param teamId 
+   */
+  setWinner(teamId:string) {
+    this.tournament.teams.forEach(team => {
+      if (teamId === team.id) {
+        this.setTeamKey(team);
+      } else if (this.teamIncludesInKey(team)) {
+        team.isActive = false; // set loser
+      }
+    });
   }
 }

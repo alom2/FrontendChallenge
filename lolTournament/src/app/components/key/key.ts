@@ -25,20 +25,14 @@ export class Key extends TeamManager {
   appState: IAppState = AppState;
 
   /**
-   * Set team next keyId
+   * Set the winner team and next keyId, the loser and emits tournament changes
    * @param teamId 
    */
   setKeyWinner(teamId:string) {
     if (!this.canClick()) {
       this.appState.sidebarIsOpen = true;
     } else if (this.areTeamsActives()) {
-      this.tournament.teams.forEach(team => {
-        if (teamId === team.id) {
-          this.setTeamKey(team);
-        } else if (this.teamIncludesInKey(team)) {
-          team.isActive = false; // set loser
-        }
-      });
+      this.setWinner(teamId);
       this.tournamentChange.emit(this.tournament);
     }
   }
