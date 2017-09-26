@@ -15,8 +15,7 @@ export class Step {
    */
   setKeys(keys: Array<IKey>) {
     this.keys = keys.map((key,index) => {
-      let nextIndex = index % 2;
-      return new Key(key.id, key.nextKey, nextIndex, key.lastTeamId);
+      return new Key(key.id, key.nextKey, key.lastTeamId);
     })
   }
 
