@@ -15,6 +15,8 @@ export class Winner {
   @Input('keyId') keyId:number;
   @Input('stepId') stepId:number;
 
+  winnerText:string = '';
+
   /**
    * Get the winner team and if doesnt have team fill out with a mock
    * @param teams 
@@ -27,6 +29,7 @@ export class Winner {
       }
     })
     if (availableTeam) {
+      this.winnerText = '"Quem vai encarar o campeão?" - Jax'
       return availableTeam;
     }
     return new Team(teamMock.id, teamMock.name, this.stepId, this.keyId, teamMock.isActive);

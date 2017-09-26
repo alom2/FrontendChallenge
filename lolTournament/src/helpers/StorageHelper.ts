@@ -43,3 +43,9 @@ export const setItem = (property:string, value:any):void => {
 export const getProperty = (property:string):any|null => {
   return getJSONStored()[property] || null;
 }
+
+export const remove = (property:string) => {
+  let JSONStored = getJSONStored();
+  delete JSONStored[property];
+  localStorage.setItem(mainObject, JSON.stringify(JSONStored));
+}

@@ -5,7 +5,7 @@ $team-size: 120px;
 //local placeholders
 %team-deactivated {
   &.deactivated {
-    opacity: .6;
+    opacity: .2;
     cursor: not-allowed;
     user-select: none;
   }
